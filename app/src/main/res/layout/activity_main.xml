@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,106 +8,12 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/lblnum1"
-        android:text="num 1:"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="@string/hola"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtnum1"
-        android:hint="ej. 5"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="70dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/lblnum2"
-        android:text="num 2:"
-        android:layout_marginTop="120dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/txtnum2"
-        android:hint="ej. 4.8"
-        android:layout_marginTop="110dp"
-        android:layout_marginLeft="70dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/lblrespuesta"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="20dp"
-        android:text="Respuesta: ?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <RadioGroup
-        android:id="@+id/rgoOpciones"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/optsuma"
-            android:text="sumar"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optresta"
-            android:text="resta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optmultiplicacion"
-            android:text="multiplicacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optdivision"
-            android:text="division"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optexponensacion"
-            android:text="exponensacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optporcentaje"
-            android:text="porcentaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optraiz"
-            android:text="raiz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optfactorial"
-            android:text="factorial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/btncalcular"
-        android:layout_marginTop="555dp"
-        android:text="calcular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

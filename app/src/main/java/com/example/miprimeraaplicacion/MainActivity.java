@@ -91,11 +91,23 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 1; i <= num1; i++) {
                         respuesta *= i;
                     }
+                    RadioButton opt = findViewById(R.id.optmodulo); // Asegurar que opt se declare como RadioButton
+                    if (opt.isChecked()) {
+                        if (num2 == 0) {
+                        }
+                        else {
+                            respuesta = num1 % num2;
+                    }
+
+                         opt = findViewById(R.id.optmayorque); // Asegurar que sea un RadioButton
+                        if (opt.isChecked()) {
+                            respuesta = Math.max(num1, num2);
+                    }
                 }
                 lblRespuesta = findViewById(R.id.lblrespuesta);
                 lblRespuesta.setText("Respuesta: "+ respuesta);
             }
-        }
-
+            }
+    }
 
 

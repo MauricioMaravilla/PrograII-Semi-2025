@@ -27,87 +27,78 @@ public class MainActivity extends AppCompatActivity {
         lblRespuesta = findViewById(R.id.lblrespuesta);
         rgo = findViewById(R.id.rgoOpciones);
 
-            // Configurar el listener del botón
+        // Configurar el listener del botón
         btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    calcularResultado();
-                }
-                               });
+            @Override
+            public void onClick(View v) {
+                calcularResultado();
+            }
+        });
 
-
-            // Listener para deshabilitar txtNum2 cuando se selecciona factorial o raíz
         rgo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    txtNum2.setEnabled(checkedId != R.id.optraiz && checkedId != R.id.optfactorial);
-                }
-            });
-        }
-            private void calcularResultado() {
-                double num1 = Double.parseDouble(txtNum1.getText().toString());
-                double num2 = 0;
-                double respuesta = 0;
-                int selectedId = rgo.getCheckedRadioButtonId(); // Obtener el ID del RadioButton seleccionado
-
-                // Desactivar txtNum2 si se selecciona factorial o raíz
-                if (selectedId == R.id.optraiz || selectedId == R.id.optfactorial) {
-                    txtNum2.setEnabled(false);
-                } else {
-                    txtNum2.setEnabled(true);
-                    num2 = Double.parseDouble(txtNum2.getText().toString());
-                }
-
-                if (selectedId == R.id.optsuma) {
-                    respuesta = num1 + num2;
-                }
-
-                else if (selectedId == R.id.optresta) {
-                    respuesta = num1 - num2;
-                }
-
-                else if (selectedId == R.id.optmultiplicacion) {
-                    respuesta = num1 * num2;
-                }
-
-                else if (selectedId == R.id.optdivision) {
-                    respuesta = num1 / num2;
-                }
-
-                else if (selectedId == R.id.optexponensacion) {
-                    respuesta = Math.pow(num1, num2);
-                }
-
-                else if (selectedId == R.id.optporcentaje) {
-                    respuesta = (num1 * num2) / 100;
-                }
-
-                else if (selectedId == R.id.optraiz) {
-                    respuesta = Math.sqrt(num1);
-                }
-
-                else if (selectedId == R.id.optfactorial) {
-                    respuesta = 1;
-                    for (int i = 1; i <= num1; i++) {
-                        respuesta *= i;
-                    }
-                    RadioButton opt = findViewById(R.id.optmodulo); // Asegurar que opt se declare como RadioButton
-                    if (opt.isChecked()) {
-                        if (num2 == 0) {
-                        }
-                        else {
-                            respuesta = num1 % num2;
-                    }
-
-                         opt = findViewById(R.id.optmayorque); // Asegurar que sea un RadioButton
-                        if (opt.isChecked()) {
-                            respuesta = Math.max(num1, num2);
-                    }
-                }
-                lblRespuesta = findViewById(R.id.lblrespuesta);
-                lblRespuesta.setText("Respuesta: "+ respuesta);
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                txtNum2.setEnabled(checkedId != R.id.optraiz && checkedId != R.id.optfactorial);
             }
-            }
+        });
     }
+
+    private void calcularResultado() {
+        try {
+            double num1 = Double.parseDouble(txtNum1.getText().toString());
+            double num2 = 0;
+            double respuesta = 0;
+
+            int selectedId = rgo.getCheckedRadioButtonId();
+
+            if (selectedId == R.id.optraiz || selectedId == R.id.optfactorial) {
+                txtNum2.setEnabled(false);
+            } else {
+                txtNum2.setEnabled(true);
+                num2 = Double.parseDouble(txtNum2.getText().toString());
+            }
+
+            if (selectedId == R.id.optsuma) {
+                respuesta = num1 + num2;
+            } else if (selectedId == R.id.optresta) {
+                respuesta = num1 - num2;
+            } else if (selectedId == R.id.optmultiplicacion) {
+                respuesta = num1 * num2;
+            } else if (selectedId == R.id.optdivision) {
+                if (num2 != 0) {
+                    respuesta = num1 / num2;
+                } else {
+                    lblRespuesta.setText("Error: División por cero");
+                    return;
+                }
+            } else if (selectedId == R.id.optexponensacion) {
+                respuesta = Math.pow(num1, num2);
+            } else if (selectedId == R.id.optporcentaje) {
+                respuesta = (num1 * num2) / 100;
+            } else if (selectedId == R.id.optraiz) {
+                respuesta = Math.sqrt(num1);
+            } else if (selectedId == R.id.optfactorial) {
+                respuesta = 1;
+                for (int i = 1; i <= num1; i++) {
+                    respuesta *= i;
+                }
+            } else if (selectedId == R.id.optmayorque) {
+                respuesta = Math.max(num1, num2);
+            } else if (selectedId == R.id.optmodulo) {
+                if (num2 != 0) {
+                    respuesta = num1 % num2;
+                } else {
+                    lblRespuesta.setText("Error: Módulo por cero");
+                    return;
+                }
+            }
+
+            lblRespuesta.setText("Respuesta: " + respuesta);
+
+        } catch (NumberFormatException e) {
+            lblRespuesta.setText("Error: Entrada no válida");
+        }
+    }
+}
 
 

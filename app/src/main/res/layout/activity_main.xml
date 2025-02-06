@@ -37,86 +37,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <Spinner
+        android:id="@+id/spnOpciones"
+        android:layout_below="@id/txtnum2"
+        android:entries="@array/opciones"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/lblrespuesta"
-        android:layout_marginTop="180dp"
+        android:layout_below="@id/spnOpciones"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:text="Respuesta: ?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <RadioGroup
-        android:id="@+id/rgoOpciones"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/optsuma"
-            android:text="sumar"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optresta"
-            android:text="resta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optmultiplicacion"
-            android:text="multiplicacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optdivision"
-            android:text="division"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optexponensacion"
-            android:text="exponensacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optporcentaje"
-            android:text="porcentaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optraiz"
-            android:text="raiz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optfactorial"
-            android:text="factorial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/optmodulo"
-            android:text="modulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/optmayorque"
-            android:text="mayorque"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </RadioGroup>
-
     <Button
         android:id="@+id/btncalcular"
-        android:layout_marginTop="650dp"
+        android:layout_below="@id/lblrespuesta"
+        android:layout_marginTop="40dp"
         android:text="calcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

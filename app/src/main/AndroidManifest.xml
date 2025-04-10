@@ -22,7 +22,7 @@
             android:exported="true"/>
 
         <activity
-            android:name=".lista_amigos"
+            android:name=".lista_productos"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

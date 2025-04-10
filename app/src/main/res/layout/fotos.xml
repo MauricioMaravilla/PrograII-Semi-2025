@@ -18,26 +18,26 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/lblNombreAdaptador"
+        android:id="@+id/lblCodigoAdaptador"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="80dp"
-        android:text="Juan Perez"
+        android:text="00"
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/lblTelefonoAdaptador"
+        android:id="@+id/lblDescripcionAdaptador"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="80dp"
-        android:text="2626-1212"
+        android:text="gaseosa"
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/lblEmailAdaptador"
+        android:id="@+id/lblPrecioAdaptador"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="200dp"
-        android:text="juan@gmail.com"
+        android:text="1.0"
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

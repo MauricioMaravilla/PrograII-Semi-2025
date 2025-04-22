@@ -51,9 +51,27 @@
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/txtCosto"
+        android:hint="Costo"
+        android:layout_below="@id/txtPrecio"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/txtStock"
+        android:hint="Stock"
+        android:layout_below="@id/txtCosto"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <ImageButton
         android:id="@+id/imgFotoProducto"
-        android:layout_below="@id/txtPrecio"
+        android:layout_below="@id/txtStock"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:src="@mipmap/ic_launcher_round"

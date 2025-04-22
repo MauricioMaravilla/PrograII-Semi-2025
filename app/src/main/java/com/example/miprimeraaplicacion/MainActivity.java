@@ -80,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtPrecio);
                 tempVal.setText(datos.getString("precio"));
 
+                tempVal = findViewById(R.id.txtCosto);
+                tempVal.setText(datos.getString("costo"));
+
+                tempVal = findViewById(R.id.txtStock);
+                tempVal.setText(datos.getString("stock"));
+
                 urlCompletaFoto = datos.getString("urlFoto");
                 img.setImageURI(Uri.parse(urlCompletaFoto));
             } else {
@@ -163,6 +169,13 @@ public class MainActivity extends AppCompatActivity {
             tempVal = findViewById(R.id.txtPrecio);
             String precio = tempVal.getText().toString();
 
+            tempVal = findViewById(R.id.txtCosto);
+            String costo = tempVal.getText().toString();
+
+            tempVal = findViewById(R.id.txtStock);
+            String stock = tempVal.getText().toString();
+
+
             JSONObject datosProductos = new JSONObject();
             if (accion.equals("modificar")) {
                 datosProductos.put("_id", id);
@@ -174,6 +187,8 @@ public class MainActivity extends AppCompatActivity {
             datosProductos.put("marca", marca);
             datosProductos.put("presentacion", presentacion);
             datosProductos.put("precio", precio);
+            datosProductos.put("costo", costo);
+            datosProductos.put("stock", stock);
             datosProductos.put("foto", urlCompletaFoto);
 
             di = new detectarInternet(this);

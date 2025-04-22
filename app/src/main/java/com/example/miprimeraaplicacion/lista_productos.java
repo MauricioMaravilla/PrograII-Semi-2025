@@ -175,7 +175,9 @@ public class lista_productos extends Activity {
                     jsonObject.put("marca", cProductos.getString(3));
                     jsonObject.put("presentacion", cProductos.getString(4));
                     jsonObject.put("precio", cProductos.getString(5));
-                    jsonObject.put("foto", cProductos.getString(6));
+                    jsonObject.put("costo", cProductos.getString(6));
+                    jsonObject.put("stock", cProductos.getString(7));
+                    jsonObject.put("foto", cProductos.getString(8));
                     jsonArray.put(jsonObject);
                 } while (cProductos.moveToNext());
                 mostrarDatosProductos();
@@ -211,7 +213,9 @@ di = new detectarInternet(this);
                             jsonObject.getString("marca"),
                             jsonObject.getString("presentacion"),
                             jsonObject.getString("precio"),
-                            jsonObject.getString("foto")
+                            jsonObject.getString("costo"),
+                            jsonObject.getString("stock"),
+                            jsonObject.getString("foto"),
                     );
                     alProductos.add(misProductos);
                 }
